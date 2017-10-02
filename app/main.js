@@ -1,38 +1,38 @@
 import * as Sounds from './sounds.js';
+import Toolbar from './toolbar';
+import Player from './player';
 import { Howl } from 'howler';
 
 document.write('this is working from main.js');
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  let currentSound;
-
-  let $sound1 = $('#sound1');
-  let $sound2 = $('#sound2');
-  let $sound3 = $('#sound3');
-  let $sound4 = $('#sound4');
-  let $sound5 = $('#sound5');
-  let $sound6 = $('#sound6');
-  let $sound7 = $('#sound7');
-  let $sound8 = $('#sound8');
-  let $sound9 = $('#sound9');
-  let $sound10 = $('#sound10');
-  let $sound11 = $('#sound11');
-  let $sound12 = $('#sound12');
-  let $sound13 = $('#sound13');
-  let $sound14 = $('#sound14');
-  let $sound15 = $('#sound15');
-  let $sound16 = $('#sound16');
+  const $sound1 = $('#sound1');
+  const $sound2 = $('#sound2');
+  const $sound3 = $('#sound3');
+  const $sound4 = $('#sound4');
+  const $sound5 = $('#sound5');
+  const $sound6 = $('#sound6');
+  const $sound7 = $('#sound7');
+  const $sound8 = $('#sound8');
+  const $sound9 = $('#sound9');
+  const $sound10 = $('#sound10');
+  const $sound11 = $('#sound11');
+  const $sound12 = $('#sound12');
+  const $sound13 = $('#sound13');
+  const $sound14 = $('#sound14');
+  const $sound15 = $('#sound15');
+  const $sound16 = $('#sound16');
 
   $sound1.click(function (){
     Sounds.sound1.play();
-    currentSound = $sound1;
+    Toolbar.currentSound = $sound1;
     $sound1.addClass('selected');
-    console.log(currentSound);
+    console.log(Toolbar.currentSound);
   });
   $sound2.click(function (){
     Sounds.sound2.play();
-    currentSound = $sound2;
+    Toolbar.currentSound = $sound2;
   });
   $('#sound3').click(function (){
     Sounds.sound3.play();
@@ -44,5 +44,23 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('we clicked it!');
     Sounds.sound5.play();
   });
+
+  $('#play').click(function(e) {
+    playLoop();
+  });
+
+  function playLoop() {
+      let elem = document.getElementById("bar");
+      let width = 1;
+      let id = setInterval(frame, 10);
+      function frame() {
+          if (width >= 100) {
+              clearInterval(id);
+          } else {
+              width++;
+              elem.style.width = width + '%';
+          }
+      }
+  }
 
 });
