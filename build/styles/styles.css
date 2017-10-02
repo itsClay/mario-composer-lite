@@ -1,0 +1,13 @@
+.position-tracker {
+  /*this will be responsible for drawing a vertical semi transparent
+  line to show positioning of sounds*/
+
+}
+
+body {
+  background-color: grey;
+}
+
+.selected {
+  background-color: red;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Mario_Composer_Lite",
+  "version": "1.0.0",
+  "description": "## Background and Overview This is a fan project from a favorite game that I grew up playing as a child. Users can select a specific mario-related sounds and place them on a sheet of music to compose a song.",
+  "main": "player.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsClay/mario-composer-lite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsClay/mario-composer-lite/issues"
+  },
+  "homepage": "https://github.com/itsClay/mario-composer-lite#readme",
+  "dependencies": {
+    "howler": "^2.0.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
