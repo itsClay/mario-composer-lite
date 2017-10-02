@@ -10,7 +10,7 @@ This is a fan project from a favorite game that I grew up playing as a child. Us
 ## Wireframes
 The app will be a single page sound board with a moving line so users can see the timing of their sounds. There will be a tool bar at the top consisting of different sound icons. The music sheet will be a 16 x 6 grid where users may click to place the highlighted icon on the grid. the positions of the icons will not reflect different sound pitches. Finally the lower toolbar will control the play of the sounds.
 
-![wireframe](/assets/images/mario_lite_wireframe.png)
+![wireframe](/build/assets/images/mario_lite_wireframe.png)
 
 ## Architecture and Technologies
 This project will be implemented using the following technologies:
