@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =========TESTS===========
-
+  player.play(store);
 
 
 
