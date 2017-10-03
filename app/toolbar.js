@@ -4,7 +4,7 @@ class Toolbar {
   constructor (){
     this.currentSound = null;
     this.sounds = {
-      sound1: {sound: Sounds.sound1, selector: $('#sound1'), img: 'assets/images/eraser.png'},
+      sound1: {sound: null, selector: $('#sound1'), img: ''},
       sound2: {sound: Sounds.sound2, selector: $('#sound2'), img: 'assets/images/1_mario.png'},
       sound3: {sound: Sounds.sound3, selector: $('#sound3'), img: 'assets/images/2_mushroom.png'},
       sound4: {sound: Sounds.sound4, selector: $('#sound4'), img: 'assets/images/3_yoshi.png'},

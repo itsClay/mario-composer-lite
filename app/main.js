@@ -29,78 +29,109 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $sound1.click(function (){
     toolbar.removeActiveSoundClass();
-    Sounds.sound1.play();
     toolbar.setCurrentSound(toolbar.sounds.sound1);
     toolbar.addActiveSoundClass($sound1);
+    Sounds.sound1.play();
     console.log(toolbar);
   });
   $sound2.click(function (){
     toolbar.removeActiveSoundClass();
-    Sounds.sound2.play();
     toolbar.setCurrentSound(toolbar.sounds.sound2);
     toolbar.addActiveSoundClass($sound2);
+    Sounds.sound2.play();
   });
   $sound3.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound3);
+    toolbar.addActiveSoundClass($sound3);
     Sounds.sound3.play();
-    toolbar.setCurrentSound($sound3);
   });
   $sound4.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound4);
+    toolbar.addActiveSoundClass($sound4);
     Sounds.sound4.play();
-    toolbar.setCurrentSound($sound4);
   });
   $sound5.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound5);
+    toolbar.addActiveSoundClass($sound5);
     Sounds.sound5.play();
-    toolbar.setCurrentSound($sound5);
   });
   $sound6.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound6);
+    toolbar.addActiveSoundClass($sound6);
     Sounds.sound6.play();
-    toolbar.setCurrentSound($sound6);
   });
   $sound7.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound7);
+    toolbar.addActiveSoundClass($sound7);
     Sounds.sound7.play();
-    toolbar.setCurrentSound($sound7);
   });
   $sound8.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound8);
+    toolbar.addActiveSoundClass($sound8);
     Sounds.sound8.play();
-    toolbar.setCurrentSound($sound8);
   });
   $sound9.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound9);
+    toolbar.addActiveSoundClass($sound9);
     Sounds.sound9.play();
-    toolbar.setCurrentSound($sound9);
   });
   $sound10.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound10);
+    toolbar.addActiveSoundClass($sound10);
     Sounds.sound10.play();
-    toolbar.setCurrentSound($sound10);
   });
   $sound11.click(function (){
-    Sounds.sound2.play();
-    toolbar.setCurrentSound($sound11);
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound11);
+    toolbar.addActiveSoundClass($sound11);
+    Sounds.sound11.play();
   });
   $sound12.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound12);
+    toolbar.addActiveSoundClass($sound12);
     Sounds.sound12.play();
-    toolbar.setCurrentSound($sound12);
   });
   $sound13.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound13);
+    toolbar.addActiveSoundClass($sound13);
     Sounds.sound13.play();
-    toolbar.setCurrentSound($sound13);
   });
   $sound14.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound14);
+    toolbar.addActiveSoundClass($sound14);
     Sounds.sound14.play();
-    toolbar.setCurrentSound($sound14);
   });
   $sound15.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound15);
+    toolbar.addActiveSoundClass($sound15);
     Sounds.sound15.play();
-    toolbar.setCurrentSound($sound15);
   });
   $sound16.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound16);
+    toolbar.addActiveSoundClass($sound16);
     Sounds.sound16.play();
-    toolbar.setCurrentSound($sound16);
   });
 
   $('ul li').click(function(e) {
     // alert($(this).attr('id').split('-'));
+    const [col, row] = $(this).attr('id').split('-');
+    console.log('col and row: ', col, row);
     if( toolbar.currentSound ) {
       $(this).html(`<img src=${toolbar.currentSound.img}>`);
+      store.addSound(col, row, toolbar.currentSound.sound);
     }
   });
 
