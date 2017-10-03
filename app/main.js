@@ -4,8 +4,6 @@ import Player from './player';
 import Store from './store';
 import { Howl } from 'howler';
 
-document.write('this is working from main.js');
-
 document.addEventListener('DOMContentLoaded', function() {
 
   const toolbar = new Toolbar();
@@ -30,13 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const $sound16 = $('#sound16');
 
   $sound1.click(function (){
+    toolbar.removeActiveSoundClass();
     Sounds.sound1.play();
-    toolbar.setCurrentSound($sound1);
+    toolbar.setCurrentSound(toolbar.sounds.sound1);
+    toolbar.addActiveSoundClass($sound1);
     console.log(toolbar);
   });
   $sound2.click(function (){
+    toolbar.removeActiveSoundClass();
     Sounds.sound2.play();
-    toolbar.setCurrentSound($sound3);
+    toolbar.setCurrentSound(toolbar.sounds.sound2);
+    toolbar.addActiveSoundClass($sound2);
   });
   $sound3.click(function (){
     Sounds.sound3.play();
@@ -95,8 +97,15 @@ document.addEventListener('DOMContentLoaded', function() {
     toolbar.setCurrentSound($sound16);
   });
 
-  console.log('store before anything: ', store.grid);
-  store.addSound(1, 2, 'boo.wave')
+  $('ul li').click(function(e) {
+    // alert($(this).attr('id').split('-'));
+    if( toolbar.currentSound ) {
+      $(this).html(`<img src=${toolbar.currentSound.img}>`);
+    }
+  });
+
+  // =========TESTS===========
+
 
 
 

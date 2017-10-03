@@ -1,16 +1,11 @@
 .position-tracker {
   /*this will be responsible for drawing a vertical semi transparent
   line to show positioning of sounds*/
-
 }
 
-body {
+.active {
+  border: 2px solid red;
 }
-
-.selected {
-  background-color: red;
-}
-
 #progress {
   width: 100%;
   background-color: white;
@@ -22,4 +17,39 @@ body {
 }
 #bar:after {
   background-color: red;
+}
+.icon {
+  margin-left: 5px;
+  height: 40px;
+}
+.icon img {
+  height: 40px;
+}
+.toolbar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.grid {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.grid li {
+  list-style: none;
+  height: 40px;
+  width: 40px;
+  background-color: purple;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+.grid li:hover {
+  background-color: grey;
+}
+.column ul li {
+  height: 40px;
+  width: 40px;
+}
+.column ul li img {
+  height: 40px;
 }
