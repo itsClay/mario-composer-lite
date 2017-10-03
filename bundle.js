@@ -79,16 +79,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sounds_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toolbar__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_howler__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_howler__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_howler__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_howler__);
 
 
 
 
 
-document.write('this is working from main.js');
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  const toolbar = new __WEBPACK_IMPORTED_MODULE_1__toolbar__["a" /* default */]();
+  const player = new __WEBPACK_IMPORTED_MODULE_2__player__["a" /* default */]();
+  const store = new __WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */]();
 
   const $sound1 = $('#sound1');
   const $sound2 = $('#sound2');
@@ -108,25 +112,86 @@ document.addEventListener('DOMContentLoaded', function() {
   const $sound16 = $('#sound16');
 
   $sound1.click(function (){
+    toolbar.removeActiveSoundClass();
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["a" /* sound1 */].play();
-    __WEBPACK_IMPORTED_MODULE_1__toolbar__["a" /* default */].currentSound = $sound1;
-    $sound1.addClass('selected');
-    console.log(__WEBPACK_IMPORTED_MODULE_1__toolbar__["a" /* default */].currentSound);
+    toolbar.setCurrentSound(toolbar.sounds.sound1);
+    toolbar.addActiveSoundClass($sound1);
+    console.log(toolbar);
   });
   $sound2.click(function (){
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["b" /* sound2 */].play();
-    __WEBPACK_IMPORTED_MODULE_1__toolbar__["a" /* default */].currentSound = $sound2;
+    toolbar.removeActiveSoundClass();
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
+    toolbar.setCurrentSound(toolbar.sounds.sound2);
+    toolbar.addActiveSoundClass($sound2);
   });
-  $('#sound3').click(function (){
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["c" /* sound3 */].play();
+  $sound3.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["j" /* sound3 */].play();
+    toolbar.setCurrentSound($sound3);
   });
-  $('#sound4').click(function (){
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["d" /* sound4 */].play();
+  $sound4.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["k" /* sound4 */].play();
+    toolbar.setCurrentSound($sound4);
   });
-  $('#sound5').click(function (){
-    console.log('we clicked it!');
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["e" /* sound5 */].play();
+  $sound5.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["l" /* sound5 */].play();
+    toolbar.setCurrentSound($sound5);
   });
+  $sound6.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["m" /* sound6 */].play();
+    toolbar.setCurrentSound($sound6);
+  });
+  $sound7.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["n" /* sound7 */].play();
+    toolbar.setCurrentSound($sound7);
+  });
+  $sound8.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["o" /* sound8 */].play();
+    toolbar.setCurrentSound($sound8);
+  });
+  $sound9.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["p" /* sound9 */].play();
+    toolbar.setCurrentSound($sound9);
+  });
+  $sound10.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["b" /* sound10 */].play();
+    toolbar.setCurrentSound($sound10);
+  });
+  $sound11.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
+    toolbar.setCurrentSound($sound11);
+  });
+  $sound12.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["d" /* sound12 */].play();
+    toolbar.setCurrentSound($sound12);
+  });
+  $sound13.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["e" /* sound13 */].play();
+    toolbar.setCurrentSound($sound13);
+  });
+  $sound14.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["f" /* sound14 */].play();
+    toolbar.setCurrentSound($sound14);
+  });
+  $sound15.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["g" /* sound15 */].play();
+    toolbar.setCurrentSound($sound15);
+  });
+  $sound16.click(function (){
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["h" /* sound16 */].play();
+    toolbar.setCurrentSound($sound16);
+  });
+
+  $('ul li').click(function(e) {
+    // alert($(this).attr('id').split('-'));
+    if( toolbar.currentSound ) {
+      $(this).html(`<img src=${toolbar.currentSound.img}>`);
+    }
+  });
+
+  // =========TESTS===========
+
+
+
 
   $('#play').click(function(e) {
     playLoop();
@@ -172,7 +237,7 @@ const sound2 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   onend: () => console.log('sound1')
 });
-/* harmony export (immutable) */ __webpack_exports__["b"] = sound2;
+/* harmony export (immutable) */ __webpack_exports__["i"] = sound2;
 
 const sound3 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote3.wav'],
@@ -180,7 +245,7 @@ const sound3 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* harmony export (immutable) */ __webpack_exports__["c"] = sound3;
+/* harmony export (immutable) */ __webpack_exports__["j"] = sound3;
 
 const sound4 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote4.wav'],
@@ -188,7 +253,7 @@ const sound4 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* harmony export (immutable) */ __webpack_exports__["d"] = sound4;
+/* harmony export (immutable) */ __webpack_exports__["k"] = sound4;
 
 const sound5 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote5.wav'],
@@ -196,7 +261,7 @@ const sound5 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* harmony export (immutable) */ __webpack_exports__["e"] = sound5;
+/* harmony export (immutable) */ __webpack_exports__["l"] = sound5;
 
 const sound6 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote6.wav'],
@@ -204,7 +269,7 @@ const sound6 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound6 */
+/* harmony export (immutable) */ __webpack_exports__["m"] = sound6;
 
 const sound7 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote7.wav'],
@@ -212,7 +277,7 @@ const sound7 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound7 */
+/* harmony export (immutable) */ __webpack_exports__["n"] = sound7;
 
 const sound8 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote8.wav'],
@@ -220,7 +285,7 @@ const sound8 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound8 */
+/* harmony export (immutable) */ __webpack_exports__["o"] = sound8;
 
 const sound9 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote9.wav'],
@@ -228,7 +293,7 @@ const sound9 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound9 */
+/* harmony export (immutable) */ __webpack_exports__["p"] = sound9;
 
 const sound10 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote10.wav'],
@@ -236,7 +301,7 @@ const sound10 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound10 */
+/* harmony export (immutable) */ __webpack_exports__["b"] = sound10;
 
 const sound11 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote11.wav'],
@@ -244,7 +309,7 @@ const sound11 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound11 */
+/* harmony export (immutable) */ __webpack_exports__["c"] = sound11;
 
 const sound12 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote12.wav'],
@@ -252,7 +317,7 @@ const sound12 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound12 */
+/* harmony export (immutable) */ __webpack_exports__["d"] = sound12;
 
 const sound13 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote13.wav'],
@@ -260,7 +325,7 @@ const sound13 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound13 */
+/* harmony export (immutable) */ __webpack_exports__["e"] = sound13;
 
 const sound14 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote14.wav'],
@@ -268,7 +333,7 @@ const sound14 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound14 */
+/* harmony export (immutable) */ __webpack_exports__["f"] = sound14;
 
 const sound15 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote15.wav'],
@@ -276,7 +341,7 @@ const sound15 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound15 */
+/* harmony export (immutable) */ __webpack_exports__["g"] = sound15;
 
 const sound16 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote16.wav'],
@@ -284,7 +349,7 @@ const sound16 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   loop: false,
   // onend: () => console.log('sound1')
 });
-/* unused harmony export sound16 */
+/* harmony export (immutable) */ __webpack_exports__["h"] = sound16;
 
 
 
@@ -3130,20 +3195,46 @@ module.exports = g;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sounds__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_howler__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_howler__);
-
 
 
 class Toolbar {
   constructor (){
     this.currentSound = null;
+    this.sounds = {
+      sound1: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["a" /* sound1 */], selector: $('#sound1'), img: 'assets/images/eraser.png'},
+      sound2: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["i" /* sound2 */], selector: $('#sound2'), img: 'assets/images/1_mario.png'},
+      sound3: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["j" /* sound3 */], selector: $('#sound3'), img: 'assets/images/2_mushroom.png'},
+      sound4: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["k" /* sound4 */], selector: $('#sound4'), img: 'assets/images/3_yoshi.png'},
+      sound5: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["l" /* sound5 */], selector: $('#sound5'), img: 'assets/images/4_star.png'},
+      sound6: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["m" /* sound6 */], selector: $('#sound6'), img: 'assets/images/5_flower.png'},
+      sound7: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["n" /* sound7 */], selector: $('#sound7'), img: 'assets/images/6_gameboy.png'},
+      sound8: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["o" /* sound8 */], selector: $('#sound8'), img: 'assets/images/7_dog.png'},
+      sound9: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["p" /* sound9 */], selector: $('#sound9'), img: 'assets/images/8_cat.png'},
+      sound10: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["b" /* sound10 */], selector: $('#sound10'), img: 'assets/images/9_pig.png'},
+      sound11: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["c" /* sound11 */], selector: $('#sound11'), img: 'assets/images/10_swan.png'},
+      sound12: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["d" /* sound12 */], selector: $('#sound12'), img: 'assets/images/11_face.png'},
+      sound13: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["e" /* sound13 */], selector: $('#sound13'), img: 'assets/images/12_plane.png'},
+      sound14: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["f" /* sound14 */], selector: $('#sound14'), img: 'assets/images/13_ship.png'},
+      sound15: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["g" /* sound15 */], selector: $('#sound15'), img: 'assets/images/14_car.png'},
+      sound16: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["h" /* sound16 */], selector: $('#sound16'), img: 'assets/images/15_heart.png'},
+    };
   }
 
+  setCurrentSound(sound) {
+    // sound is a toolbar sound object
+    this.currentSound = sound;
+    console.log('current selected song: ', this.currentSound);
+  }
+
+  addActiveSoundClass($sound) {
+    $sound.addClass('active');
+  }
+
+  removeActiveSoundClass() {
+    $(".toolbar>div.active").removeClass('active');
+  }
 
 }
-
-
 
 /* harmony default export */ __webpack_exports__["a"] = (Toolbar);
 
@@ -3153,34 +3244,192 @@ class Toolbar {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_howler__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_howler__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sounds__ = __webpack_require__(2);
-
-
-
 
 class Player {
   constructor() {
     this.playing = true;
-    this.playlist = [];
   }
-
   // a player is responsible for the loop of the music. It will essentially
   // be a controller for a running loop and have multiple functions around it.
+  playCurrentPlaylist(songList){
+    // takes in a list of howl sound objects
+    songList.forEach( (song) => song.play() );
+  }
 
   play() {
+    // activate our play loop
 
   }
 
   stop() {
-
+    // this will reset our interval loop to 0 and
   }
-
 
 }
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Player);
+/* harmony default export */ __webpack_exports__["a"] = (Player);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Store {
+  constructor() {
+    this.grid = {
+        1: {
+          1: 'test sound',
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        2: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        3: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        4: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        5: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        6: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        7: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        8: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        9: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        10: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        11: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        12: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        13: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        14: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        15: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+        16: {
+          1: null,
+          2: null,
+          3: null,
+          4: null,
+          5: null,
+          6: null
+        },
+      };
+    this.addSound = this.addSound.bind(this);
+    this.removeSound = this.removeSound.bind(this);
+  }
+
+  addSound(col, row, song) {
+    // song should be a pojo with the bg img?
+    this.grid[col][row] = song;
+    console.log('grid after add: ', this.grid[1]);
+  }
+
+  removeSound(col, row) {
+    this.grid[col][row] = null;
+    console.log('grid after remove: ', this.grid[1]);
+  }
+
+  fetchColumnSounds(col) {
+    return Object.keys(this.grid[col]).map(
+      (row) => this.grid[col][row]
+    ).filter( (sound) => Boolean(sound) );
+  }
+
+}
+/* harmony default export */ __webpack_exports__["a"] = (Store);
 
 
 /***/ })
