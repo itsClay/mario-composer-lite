@@ -1,11 +1,16 @@
 import * as Sounds from './sounds.js';
 import Toolbar from './toolbar';
 import Player from './player';
+import Store from './store';
 import { Howl } from 'howler';
 
 document.write('this is working from main.js');
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  const toolbar = new Toolbar();
+  const player = new Player();
+  const store = new Store();
 
   const $sound1 = $('#sound1');
   const $sound2 = $('#sound2');
@@ -26,24 +31,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $sound1.click(function (){
     Sounds.sound1.play();
-    Toolbar.currentSound = $sound1;
-    $sound1.addClass('selected');
-    console.log(Toolbar.currentSound);
+    toolbar.setCurrentSound($sound1);
+    console.log(toolbar);
   });
   $sound2.click(function (){
     Sounds.sound2.play();
-    Toolbar.currentSound = $sound2;
+    toolbar.setCurrentSound($sound3);
   });
-  $('#sound3').click(function (){
+  $sound3.click(function (){
     Sounds.sound3.play();
+    toolbar.setCurrentSound($sound3);
   });
-  $('#sound4').click(function (){
+  $sound4.click(function (){
     Sounds.sound4.play();
+    toolbar.setCurrentSound($sound4);
   });
-  $('#sound5').click(function (){
-    console.log('we clicked it!');
+  $sound5.click(function (){
     Sounds.sound5.play();
+    toolbar.setCurrentSound($sound5);
   });
+  $sound6.click(function (){
+    Sounds.sound6.play();
+    toolbar.setCurrentSound($sound6);
+  });
+  $sound7.click(function (){
+    Sounds.sound7.play();
+    toolbar.setCurrentSound($sound7);
+  });
+  $sound8.click(function (){
+    Sounds.sound8.play();
+    toolbar.setCurrentSound($sound8);
+  });
+  $sound9.click(function (){
+    Sounds.sound9.play();
+    toolbar.setCurrentSound($sound9);
+  });
+  $sound10.click(function (){
+    Sounds.sound10.play();
+    toolbar.setCurrentSound($sound10);
+  });
+  $sound11.click(function (){
+    Sounds.sound2.play();
+    toolbar.setCurrentSound($sound11);
+  });
+  $sound12.click(function (){
+    Sounds.sound12.play();
+    toolbar.setCurrentSound($sound12);
+  });
+  $sound13.click(function (){
+    Sounds.sound13.play();
+    toolbar.setCurrentSound($sound13);
+  });
+  $sound14.click(function (){
+    Sounds.sound14.play();
+    toolbar.setCurrentSound($sound14);
+  });
+  $sound15.click(function (){
+    Sounds.sound15.play();
+    toolbar.setCurrentSound($sound15);
+  });
+  $sound16.click(function (){
+    Sounds.sound16.play();
+    toolbar.setCurrentSound($sound16);
+  });
+
+  console.log('store before anything: ', store.grid);
+  store.addSound(1, 2, 'boo.wave')
+
+
 
   $('#play').click(function(e) {
     playLoop();
