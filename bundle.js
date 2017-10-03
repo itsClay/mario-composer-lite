@@ -113,78 +113,109 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $sound1.click(function (){
     toolbar.removeActiveSoundClass();
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["a" /* sound1 */].play();
     toolbar.setCurrentSound(toolbar.sounds.sound1);
     toolbar.addActiveSoundClass($sound1);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["a" /* sound1 */].play();
     console.log(toolbar);
   });
   $sound2.click(function (){
     toolbar.removeActiveSoundClass();
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
     toolbar.setCurrentSound(toolbar.sounds.sound2);
     toolbar.addActiveSoundClass($sound2);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
   });
   $sound3.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound3);
+    toolbar.addActiveSoundClass($sound3);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["j" /* sound3 */].play();
-    toolbar.setCurrentSound($sound3);
   });
   $sound4.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound4);
+    toolbar.addActiveSoundClass($sound4);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["k" /* sound4 */].play();
-    toolbar.setCurrentSound($sound4);
   });
   $sound5.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound5);
+    toolbar.addActiveSoundClass($sound5);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["l" /* sound5 */].play();
-    toolbar.setCurrentSound($sound5);
   });
   $sound6.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound6);
+    toolbar.addActiveSoundClass($sound6);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["m" /* sound6 */].play();
-    toolbar.setCurrentSound($sound6);
   });
   $sound7.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound7);
+    toolbar.addActiveSoundClass($sound7);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["n" /* sound7 */].play();
-    toolbar.setCurrentSound($sound7);
   });
   $sound8.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound8);
+    toolbar.addActiveSoundClass($sound8);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["o" /* sound8 */].play();
-    toolbar.setCurrentSound($sound8);
   });
   $sound9.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound9);
+    toolbar.addActiveSoundClass($sound9);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["p" /* sound9 */].play();
-    toolbar.setCurrentSound($sound9);
   });
   $sound10.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound10);
+    toolbar.addActiveSoundClass($sound10);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["b" /* sound10 */].play();
-    toolbar.setCurrentSound($sound10);
   });
   $sound11.click(function (){
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
-    toolbar.setCurrentSound($sound11);
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound11);
+    toolbar.addActiveSoundClass($sound11);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["c" /* sound11 */].play();
   });
   $sound12.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound12);
+    toolbar.addActiveSoundClass($sound12);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["d" /* sound12 */].play();
-    toolbar.setCurrentSound($sound12);
   });
   $sound13.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound13);
+    toolbar.addActiveSoundClass($sound13);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["e" /* sound13 */].play();
-    toolbar.setCurrentSound($sound13);
   });
   $sound14.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound14);
+    toolbar.addActiveSoundClass($sound14);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["f" /* sound14 */].play();
-    toolbar.setCurrentSound($sound14);
   });
   $sound15.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound15);
+    toolbar.addActiveSoundClass($sound15);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["g" /* sound15 */].play();
-    toolbar.setCurrentSound($sound15);
   });
   $sound16.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound16);
+    toolbar.addActiveSoundClass($sound16);
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["h" /* sound16 */].play();
-    toolbar.setCurrentSound($sound16);
   });
 
   $('ul li').click(function(e) {
     // alert($(this).attr('id').split('-'));
+    const [col, row] = $(this).attr('id').split('-');
+    console.log('col and row: ', col, row);
     if( toolbar.currentSound ) {
       $(this).html(`<img src=${toolbar.currentSound.img}>`);
+      store.addSound(col, row, toolbar.currentSound.sound);
     }
   });
 
@@ -3201,7 +3232,7 @@ class Toolbar {
   constructor (){
     this.currentSound = null;
     this.sounds = {
-      sound1: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["a" /* sound1 */], selector: $('#sound1'), img: 'assets/images/eraser.png'},
+      sound1: {sound: null, selector: $('#sound1'), img: ''},
       sound2: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["i" /* sound2 */], selector: $('#sound2'), img: 'assets/images/1_mario.png'},
       sound3: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["j" /* sound3 */], selector: $('#sound3'), img: 'assets/images/2_mushroom.png'},
       sound4: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["k" /* sound4 */], selector: $('#sound4'), img: 'assets/images/3_yoshi.png'},
@@ -3279,7 +3310,7 @@ class Store {
   constructor() {
     this.grid = {
         1: {
-          1: 'test sound',
+          1: null,
           2: null,
           3: null,
           4: null,
@@ -3414,12 +3445,12 @@ class Store {
   addSound(col, row, song) {
     // song should be a pojo with the bg img?
     this.grid[col][row] = song;
-    console.log('grid after add: ', this.grid[1]);
+    console.log('grid after add: ', this.grid);
   }
 
   removeSound(col, row) {
     this.grid[col][row] = null;
-    console.log('grid after remove: ', this.grid[1]);
+    console.log('grid after remove: ', this.grid);
   }
 
   fetchColumnSounds(col) {
