@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =========TESTS===========
-
+  player.play(store);
 
 
 
@@ -3275,10 +3275,14 @@ class Toolbar {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(7);
+
 
 class Player {
   constructor() {
     this.playing = true;
+    this.curPos = 1;
+    this.tempo = 1000;
   }
   // a player is responsible for the loop of the music. It will essentially
   // be a controller for a running loop and have multiple functions around it.
@@ -3287,15 +3291,27 @@ class Player {
     songList.forEach( (song) => song.play() );
   }
 
-  play() {
+  play(store) {
     // activate our play loop
-
+    setInterval(
+      () => {
+        if (this.playing) {
+          if(this.curPos > 16) {
+            this.curPos = 1;
+          }
+          const sounds = store.fetchColumnSounds(this.curPos);
+          sounds.forEach( (sound) => sound.play() );
+          console.log(`playing column: ${this.curPos}`);
+          this.curPos += 1;
+        }
+      }, 1000
+    );
   }
 
   stop() {
+    this.playing = false;
     // this will reset our interval loop to 0 and
   }
-
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (Player);
