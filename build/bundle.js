@@ -225,11 +225,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ==========================
   const $slider = $('#slider');
-  let tempo = 16;
+  let marioTempo = 16;
+
+  $('#tempo-select').change(function(e) {
+    player.stopAndReset();
+    $slider.removeClass('playing');
+    let tempo = parseInt($(this).val());
+    console.log('tempo: ',tempo);
+    marioTempo = 16 * (tempo / 1000);
+    console.log('mario tempo: ', marioTempo);
+    player.setTempo( tempo );
+  });
 
   $('#play').click(function(e) {
     player.play(store);
-    $slider.addClass('playing').css('animation-duration', `${tempo}s`);
+    $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
   });
 
   $('#stop').click(function () {
@@ -3257,7 +3267,7 @@ class Toolbar {
     this.currentSound = sound;
     console.log('current selected song: ', this.currentSound);
   }
-
+  
   addActiveSoundClass($sound) {
     $sound.addClass('active');
   }
@@ -3304,7 +3314,7 @@ class Player {
         this.playCurrentPlaylist(soundList);
         console.log(`playing column: ${this.curPos}`);
         this.curPos += 1;
-      }, 1000 );
+      }, this.tempo );
     }
   }
 
@@ -3313,10 +3323,16 @@ class Player {
     this.playing = false;
     clearInterval(this.playerLoop);
   }
+
   stopAndReset() {
     this.playing = false;
     clearInterval(this.playerLoop);
     this.curPos = 1;
+  }
+
+  setTempo(tempo) {
+    this.tempo = tempo;
+    console.log('tempo set to: ', this.tempo);
   }
 }
 

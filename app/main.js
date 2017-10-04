@@ -141,11 +141,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ==========================
   const $slider = $('#slider');
-  let tempo = 16;
+  let marioTempo = 16;
+
+  $('#tempo-select').change(function(e) {
+    player.stopAndReset();
+    $slider.removeClass('playing');
+    let tempo = parseInt($(this).val());
+    console.log('tempo: ',tempo);
+    marioTempo = 16 * (tempo / 1000);
+    console.log('mario tempo: ', marioTempo);
+    player.setTempo( tempo );
+  });
 
   $('#play').click(function(e) {
     player.play(store);
-    $slider.addClass('playing').css('animation-duration', `${tempo}s`);
+    $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
   });
 
   $('#stop').click(function () {

@@ -25,7 +25,7 @@ class Player {
         this.playCurrentPlaylist(soundList);
         console.log(`playing column: ${this.curPos}`);
         this.curPos += 1;
-      }, 1000 );
+      }, this.tempo );
     }
   }
 
@@ -34,10 +34,16 @@ class Player {
     this.playing = false;
     clearInterval(this.playerLoop);
   }
+
   stopAndReset() {
     this.playing = false;
     clearInterval(this.playerLoop);
     this.curPos = 1;
+  }
+
+  setTempo(tempo) {
+    this.tempo = tempo;
+    console.log('tempo set to: ', this.tempo);
   }
 }
 

@@ -28,7 +28,7 @@ class Toolbar {
     this.currentSound = sound;
     console.log('current selected song: ', this.currentSound);
   }
-
+  
   addActiveSoundClass($sound) {
     $sound.addClass('active');
   }
