@@ -136,12 +136,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =========TESTS===========
-  player.play(store);
+
 
 
 
   $('#play').click(function(e) {
-    playLoop();
+    player.play(store);
+  });
+
+  $('#stop').click(function () {
+    player.stop();
   });
 
   function playLoop() {
