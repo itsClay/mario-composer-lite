@@ -140,16 +140,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // ==========================
+  const $slider = $('#slider');
+  let tempo = 16;
+
   $('#play').click(function(e) {
     player.play(store);
+    $slider.addClass('playing').css('animation-duration', `${tempo}s`);
   });
 
   $('#stop').click(function () {
     player.stopAndReset();
+    $slider.removeClass('playing');
   });
 
   $('#pause').click(function () {
     player.pause();
+    $slider.removeClass('playing');
+    $slider.addClass('paused');
   });
 
 });
