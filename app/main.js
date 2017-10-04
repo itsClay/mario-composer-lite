@@ -148,19 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
     player.stopAndReset();
   });
 
-  // plan on moving this out.
-  function loopThing() {
-      const elem = document.getElementById("bar");
-      let width = 1;
-      const id = setInterval(frame, 10);
-      function frame() {
-          if (width >= 100) {
-              clearInterval(id);
-          } else {
-              width++;
-              elem.style.width = width + '%';
-          }
-      }
-  }
+  $('#pause').click(function () {
+    player.pause();
+  });
 
 });

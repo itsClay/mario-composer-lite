@@ -37,7 +37,7 @@ class Player {
   stopAndReset() {
     this.playing = false;
     clearInterval(this.playerLoop);
-    this.curPos = 0;
+    this.curPos = 1;
   }
 }
 
