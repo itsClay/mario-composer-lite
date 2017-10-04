@@ -21,10 +21,22 @@
   width: 100%;
   justify-content: center;
 }
-.grid {
+.grid-wrapper {
+  width: 700px;
   display: flex;
-  width: 100%;
-  justify-content: center;
+  flex-direction: column;
+}
+.progress-tracker {
+  display: flex;
+  width: 700px;
+}
+.progress-tracker img {
+  height: 40px;
+}
+.grid {
+  width: 700px;
+  display: flex;
+  justify-content:space-between;
 }
 .grid li {
   list-style: none;
@@ -37,6 +49,9 @@
 .grid li:hover {
   background-color: grey;
 }
+.column ul {
+  padding: 1px;
+}
 .column ul li {
   height: 40px;
   width: 40px;
@@ -45,21 +60,25 @@
   height: 40px;
 }
 
-.progress-tracker {
+.paused {
+  animation-play-state: paused;
+}
+.playing {
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-name: sliding;
   animation-play-state: running;
+  animation-iteration-count: infinite;
 }
 
 @keyframes sliding {
   from {
-    margin-left: 0%;
-    width: 300%;
+    margin-left: -6%;
+    /*width: 300%;*/
   }
 
   to {
-    margin-left: 100%;
-    width: 100%;
+    margin-left: 95%;
+    /*width: 100%;*/
   }
 }
