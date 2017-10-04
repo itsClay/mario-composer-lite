@@ -139,19 +139,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+  // ==========================
   $('#play').click(function(e) {
     player.play(store);
   });
 
   $('#stop').click(function () {
-    player.stop();
+    player.stopAndReset();
   });
 
-  function playLoop() {
-      let elem = document.getElementById("bar");
+  // plan on moving this out.
+  function loopThing() {
+      const elem = document.getElementById("bar");
       let width = 1;
-      let id = setInterval(frame, 10);
+      const id = setInterval(frame, 10);
       function frame() {
           if (width >= 100) {
               clearInterval(id);
