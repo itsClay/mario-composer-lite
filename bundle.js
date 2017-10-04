@@ -220,18 +220,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =========TESTS===========
-  player.play(store);
 
 
 
+  // ==========================
   $('#play').click(function(e) {
-    playLoop();
+    player.play(store);
   });
 
-  function playLoop() {
-      let elem = document.getElementById("bar");
+  $('#stop').click(function () {
+    player.stopAndReset();
+  });
+
+  // plan on moving this out.
+  function loopThing() {
+      const elem = document.getElementById("bar");
       let width = 1;
-      let id = setInterval(frame, 10);
+      const id = setInterval(frame, 10);
       function frame() {
           if (width >= 100) {
               clearInterval(id);
@@ -3280,37 +3285,42 @@ class Toolbar {
 
 class Player {
   constructor() {
-    this.playing = true;
+    this.playing = false;
     this.curPos = 1;
     this.tempo = 1000;
+    this.playerLoop = null;
   }
   // a player is responsible for the loop of the music. It will essentially
   // be a controller for a running loop and have multiple functions around it.
-  playCurrentPlaylist(songList){
-    // takes in a list of howl sound objects
-    songList.forEach( (song) => song.play() );
+  playCurrentPlaylist(soundList){
+    soundList.forEach( (song) => song.play() );
   }
 
   play(store) {
     // activate our play loop
-    setInterval(
-      () => {
-        if (this.playing) {
-          if(this.curPos > 16) {
-            this.curPos = 1;
-          }
-          const sounds = store.fetchColumnSounds(this.curPos);
-          sounds.forEach( (sound) => sound.play() );
-          console.log(`playing column: ${this.curPos}`);
-          this.curPos += 1;
+    if (!this.playing) {
+      this.playing = true;
+      this.playerLoop = setInterval( () => {
+        if(this.curPos > 16) {
+          this.curPos = 1;
         }
-      }, 1000
-    );
+        const soundList = store.fetchColumnSounds(this.curPos);
+        this.playCurrentPlaylist(soundList);
+        console.log(`playing column: ${this.curPos}`);
+        this.curPos += 1;
+      }, 1000 );
+    }
   }
 
-  stop() {
+  pause() {
+    // this will reset our playerLoop loop to 0 and
     this.playing = false;
-    // this will reset our interval loop to 0 and
+    clearInterval(this.playerLoop);
+  }
+  stopAndReset() {
+    this.playing = false;
+    clearInterval(this.playerLoop);
+    this.curPos = 0;
   }
 }
 

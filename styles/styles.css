@@ -6,15 +6,6 @@
 .active {
   border: 2px solid red;
 }
-#progress {
-  width: 100%;
-  background-color: white;
-}
-#bar {
-  width: 1%;
-  height: 30px;
-  background-color: green;
-}
 #bar:after {
   background-color: red;
 }
@@ -39,7 +30,7 @@
   list-style: none;
   height: 40px;
   width: 40px;
-  background-color: purple;
+  background-color: red;
   margin-bottom: 5px;
   border-radius: 3px;
 }
@@ -52,4 +43,23 @@
 }
 .column ul li img {
   height: 40px;
+}
+
+.progress-tracker {
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-name: sliding;
+  animation-play-state: running;
+}
+
+@keyframes sliding {
+  from {
+    margin-left: 0%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 100%;
+    width: 100%;
+  }
 }
