@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     player.play(store);
     if($slider.hasClass('playing')){
       if($('.playing').css('animation-play-state')) {
+        console.log($('.playing'));
         $('.playing').css('animation-play-state', 'running');
       }
     } else {
@@ -245,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
   $('#stop').click(function () {
     player.stopAndReset();
     $slider.removeClass('playing');
-
   });
 
   $('#pause').click(function () {
