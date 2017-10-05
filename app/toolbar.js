@@ -4,7 +4,7 @@ class Toolbar {
   constructor (){
     this.currentSound = null;
     this.sounds = {
-      sound1: {sound: null, selector: $('#sound1'), img: ''},
+      sound1: {sound: null, selector: $('#sound1'), img: 'assets/images/blank.png'},
       sound2: {sound: Sounds.sound2, selector: $('#sound2'), img: 'assets/images/1_mario.png'},
       sound3: {sound: Sounds.sound3, selector: $('#sound3'), img: 'assets/images/2_mushroom.png'},
       sound4: {sound: Sounds.sound4, selector: $('#sound4'), img: 'assets/images/3_yoshi.png'},
@@ -28,7 +28,7 @@ class Toolbar {
     this.currentSound = sound;
     console.log('current selected song: ', this.currentSound);
   }
-  
+
   addActiveSoundClass($sound) {
     $sound.addClass('active');
   }
