@@ -2,7 +2,11 @@
   /*this will be responsible for drawing a vertical semi transparent
   line to show positioning of sounds*/
 }
-
+body {
+  background-image: url("/assets/images/mario_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .active {
   border: 2px solid red;
 }
@@ -58,6 +62,7 @@
 }
 .column ul li img {
   height: 40px;
+  width: 40px;
 }
 
 .paused {

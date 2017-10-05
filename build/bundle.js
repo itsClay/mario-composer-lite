@@ -210,7 +210,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   $('ul li').click(function(e) {
-    // alert($(this).attr('id').split('-'));
     const [col, row] = $(this).attr('id').split('-');
     console.log('col and row: ', col, row);
     if( toolbar.currentSound ) {
@@ -219,11 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // =========TESTS===========
-
-
-
-  // ==========================
   const $slider = $('#slider');
   let marioTempo = 16;
 
@@ -239,10 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $('#play').click(function(e) {
     player.play(store);
-    // if(player.pausePos) {
-    //
-    //   $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
-    // }
     if($slider.hasClass('playing')){
       if($('.playing').css('animation-play-state')) {
         $('.playing').css('animation-play-state', 'running');
