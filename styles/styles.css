@@ -43,6 +43,7 @@ body {
 }
 .progress-tracker img {
   height: 40px;
+  margin-left: -6%
 }
 .grid {
   width: 700px;
@@ -85,16 +86,90 @@ body {
 
 @keyframes sliding {
   0% {
-    margin-left: -6%;
+    margin-left: 0%;
     /*width: 300%;*/
-    6.25%
   }
+  /*6.25%{
+    margin-left: 0.25%;
+  }
+  12.5% {
+    margin-left: 6.5%;
+  }
+  18.75% {
+    margin-left: 12.75%;
+  }
+  25% {
+    margin-left: 19%;
+  }
+  31.25%{
+    margin-left: 25.25%;
+  }
+  37.5% {
+    margin-left: 31.5%;
+  }
+  43.75% {
+    margin-left: 37.75%;
+  }
+  50% {
+    margin-left: 44%;
+  }
+  56.25 {
+    margin-left: 50.25%;
+  }
+  62.5% {
+    margin-left: 56.5%;
+  }
+  68.75% {
+    margin-left: 62.75%;
+  }
+  75% {
+    margin-left: 69%;
+  }
+  81.25% {
+    margin-left: 75.25%;
+  }
+  87.5% {
+    margin-left: 81.5%;
+  }
+  93.75% {
+    margin-left: 87.75%;
+  }*/
   100% {
-    margin-left: 94%;
+    margin-left: 100%;
     /*width: 100%;*/
   }
 }
-
+.player-wrapper {
+  width: 700px;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  height: 50px;
+  width: 85px;
+  background-color: transparent;
+  border-color: red;
+  color: red;
+  border-radius: 4px;
+  font-size: 24px;
+  border: 3px solid red;
+  margin-right: 10px;
+}
+.btn:hover {
+  background-color: red;
+  color: white;
+}
+select {
+  height: 50px;
+  width: 85px;
+  background-color: transparent;
+  border-color: red;
+  color: red;
+  border-radius: 4px;
+  font-size: 24px;
+  border: 3px solid red;
+  margin-right: 10px;
+}
 .instructions-wrapper {
   position:absolute;
   right: -1px;
