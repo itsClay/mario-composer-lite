@@ -3,7 +3,7 @@
   line to show positioning of sounds*/
 }
 body {
-  background-image: url("/assets/images/mario_bg.jpg");
+  background-image: url("http://res.cloudinary.com/do2rg2v7p/image/upload/v1507243641/mario_bg_d3awzp.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
