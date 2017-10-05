@@ -6,6 +6,7 @@ class Player {
     this.curPos = 1;
     this.tempo = 1000;
     this.playerLoop = null;
+    this.pausePos = null;
   }
   // a player is responsible for the loop of the music. It will essentially
   // be a controller for a running loop and have multiple functions around it.
@@ -30,15 +31,17 @@ class Player {
   }
 
   pause() {
-    // this will reset our playerLoop loop to 0 and
     this.playing = false;
     clearInterval(this.playerLoop);
+    this.pausePos = (( this.curPos / 16 ) * 100 - 6);
+    console.log('paused margin: ', this.pausePos);
   }
 
   stopAndReset() {
     this.playing = false;
     clearInterval(this.playerLoop);
     this.curPos = 1;
+    this.pausePos = null;
   }
 
   setTempo(tempo) {

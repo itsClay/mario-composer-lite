@@ -155,18 +155,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $('#play').click(function(e) {
     player.play(store);
-    $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
+    // if(player.pausePos) {
+    //
+    //   $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
+    // }
+    if($slider.hasClass('playing')){
+      if($('.playing').css('animation-play-state')) {
+        $('.playing').css('animation-play-state', 'running');
+      }
+    } else {
+      $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
+    }
   });
 
   $('#stop').click(function () {
     player.stopAndReset();
     $slider.removeClass('playing');
+
   });
 
   $('#pause').click(function () {
     player.pause();
-    $slider.removeClass('playing');
-    $slider.addClass('paused');
+    $('.playing').css('animation-play-state','paused');
   });
 
 });
