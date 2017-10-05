@@ -21,6 +21,7 @@ body {
   height: 40px;
 }
 .toolbar {
+  margin-top: 45px;
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -78,10 +79,10 @@ body {
 }
 .playing {
   animation-duration: 3s;
-  animation-timing-function: linear;
   animation-name: sliding;
   animation-play-state: running;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes sliding {
