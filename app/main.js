@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $slider.removeClass('playing');
     const tempo = parseInt($(this).val());
     marioTempo = 16 * (tempo / 1000);
-    player.setTempo( tempo );
+    player.setTempo(tempo);
   });
 
   $('#play').click(function(e) {
@@ -169,9 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $('#instructions-hamburger').hover(function () {
     $('#instructions-wrapper').addClass('show');
-  }, function() {
+    }, function() {
     $('#instructions-wrapper').removeClass('show');
-  }
+    }
   );
 
 });
