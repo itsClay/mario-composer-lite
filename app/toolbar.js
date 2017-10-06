@@ -26,7 +26,6 @@ class Toolbar {
   setCurrentSound(sound) {
     // sound is a toolbar sound object
     this.currentSound = sound;
-    console.log('current selected song: ', this.currentSound);
   }
 
   addActiveSoundClass($sound) {

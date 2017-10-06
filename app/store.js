@@ -137,12 +137,10 @@ class Store {
   addSound(col, row, song) {
     // song should be a pojo with the bg img?
     this.grid[col][row] = song;
-    console.log('grid after add: ', this.grid);
   }
-
+  
   removeSound(col, row) {
     this.grid[col][row] = null;
-    console.log('grid after remove: ', this.grid);
   }
 
   fetchColumnSounds(col) {

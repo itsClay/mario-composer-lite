@@ -23,7 +23,6 @@ class Player {
         }
         const soundList = store.fetchColumnSounds(this.curPos);
         this.playCurrentPlaylist(soundList);
-        console.log(`playing column: ${this.curPos}`);
         this.curPos += 1;
       }, this.tempo );
     }
@@ -33,7 +32,6 @@ class Player {
     this.playing = false;
     clearInterval(this.playerLoop);
     this.pausePos = (( this.curPos / 16 ) * 100 - 6);
-    console.log('paused margin: ', this.pausePos);
   }
 
   stopAndReset() {
@@ -45,7 +43,6 @@ class Player {
 
   setTempo(tempo) {
     this.tempo = tempo;
-    console.log('tempo set to: ', this.tempo);
   }
 }
 

@@ -21,6 +21,10 @@ body {
 .icon img {
   height: 40px;
 }
+.icon:hover {
+  cursor: pointer;
+  border-bottom: 3px solid red;
+}
 .toolbar {
   margin-top: 50px;
   margin-left: 35px;
@@ -74,7 +78,6 @@ body {
   height: 40px;
   width: 40px;
 }
-
 .paused {
   animation-play-state: paused;
 }
@@ -85,7 +88,6 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
 @keyframes sliding {
   0% {
     margin-left: 0%;
@@ -113,6 +115,7 @@ body {
 .btn:hover {
   background-color: red;
   color: white;
+  cursor: pointer;
 }
 select {
   height: 50px;
@@ -129,13 +132,16 @@ select {
   position:fixed;
   right: -1px;
   top: -1px;
-  z-index: -1;
-  /*background-color: purple;*/
+}
+.instructions-hamburger {
+  display: none;
+  z-index: 2;
+  text-align: center;
+  justify-content: center;
 }
 @media screen and (max-width: 1200px) {
-  .instructions-wrapper > div {
+  .instructions-wrapper {
     display: none;
-    background-color: green;
   }
   .btn {
     background-color: #6096ff;
@@ -143,4 +149,19 @@ select {
   select {
     background-color: #6096ff;
   }
+  .instructions-hamburger {
+    display: inherit;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    /*align-items: center;*/
+    height: 50px;
+    top: 2%;
+    right: 2%;
+    width: 200px;
+    font-family: sans-serif;
+  }
+}
+.show {
+  display: block;
 }

@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     toolbar.setCurrentSound(toolbar.sounds.sound1);
     toolbar.addActiveSoundClass($sound1);
     Sounds.sound1.play();
-    console.log(toolbar);
   });
   $sound2.click(function (){
     toolbar.removeActiveSoundClass();
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // handle adding songs to our stores grid and add image to html
   $('ul li').click(function(e) {
     const [col, row] = $(this).attr('id').split('-');
-    console.log('col and row: ', col, row);
     if( toolbar.currentSound ) {
       $(this).html(`<img src=${toolbar.currentSound.img}>`);
       store.addSound(col, row, toolbar.currentSound.sound);
@@ -138,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const $slider = $('#slider');
   let marioTempo = 16;
 
-  $('#tempo-select').change(function(e) {
+  $('#tempo-select').change(function() {
     player.stopAndReset();
     $slider.removeClass('playing');
     const tempo = parseInt($(this).val());
@@ -150,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
     player.play(store);
     if($slider.hasClass('playing')){
       if($('.playing').css('animation-play-state')) {
-        console.log($('.playing'));
         $('.playing').css('animation-play-state', 'running');
       }
     } else {
@@ -169,5 +166,12 @@ document.addEventListener('DOMContentLoaded', function() {
     player.pause();
     $('.playing').css('animation-play-state','paused');
   });
+
+  $('#instructions-hamburger').hover(function () {
+    $('#instructions-wrapper').addClass('show');
+  }, function() {
+    $('#instructions-wrapper').removeClass('show');
+  }
+  );
 
 });

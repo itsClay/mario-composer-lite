@@ -60,209 +60,15 @@
 /******/ 	__webpack_require__.p = "/assets/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(1);
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sounds_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toolbar__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_howler__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_howler__);
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-  const toolbar = new __WEBPACK_IMPORTED_MODULE_1__toolbar__["a" /* default */]();
-  const player = new __WEBPACK_IMPORTED_MODULE_2__player__["a" /* default */]();
-  const store = new __WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */]();
-
-  const $sound1 = $('#sound1');
-  const $sound2 = $('#sound2');
-  const $sound3 = $('#sound3');
-  const $sound4 = $('#sound4');
-  const $sound5 = $('#sound5');
-  const $sound6 = $('#sound6');
-  const $sound7 = $('#sound7');
-  const $sound8 = $('#sound8');
-  const $sound9 = $('#sound9');
-  const $sound10 = $('#sound10');
-  const $sound11 = $('#sound11');
-  const $sound12 = $('#sound12');
-  const $sound13 = $('#sound13');
-  const $sound14 = $('#sound14');
-  const $sound15 = $('#sound15');
-  const $sound16 = $('#sound16');
-
-  $sound1.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound1);
-    toolbar.addActiveSoundClass($sound1);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["a" /* sound1 */].play();
-    console.log(toolbar);
-  });
-  $sound2.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound2);
-    toolbar.addActiveSoundClass($sound2);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
-  });
-  $sound3.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound3);
-    toolbar.addActiveSoundClass($sound3);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["j" /* sound3 */].play();
-  });
-  $sound4.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound4);
-    toolbar.addActiveSoundClass($sound4);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["k" /* sound4 */].play();
-  });
-  $sound5.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound5);
-    toolbar.addActiveSoundClass($sound5);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["l" /* sound5 */].play();
-  });
-  $sound6.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound6);
-    toolbar.addActiveSoundClass($sound6);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["m" /* sound6 */].play();
-  });
-  $sound7.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound7);
-    toolbar.addActiveSoundClass($sound7);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["n" /* sound7 */].play();
-  });
-  $sound8.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound8);
-    toolbar.addActiveSoundClass($sound8);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["o" /* sound8 */].play();
-  });
-  $sound9.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound9);
-    toolbar.addActiveSoundClass($sound9);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["p" /* sound9 */].play();
-  });
-  $sound10.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound10);
-    toolbar.addActiveSoundClass($sound10);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["b" /* sound10 */].play();
-  });
-  $sound11.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound11);
-    toolbar.addActiveSoundClass($sound11);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["c" /* sound11 */].play();
-  });
-  $sound12.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound12);
-    toolbar.addActiveSoundClass($sound12);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["d" /* sound12 */].play();
-  });
-  $sound13.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound13);
-    toolbar.addActiveSoundClass($sound13);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["e" /* sound13 */].play();
-  });
-  $sound14.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound14);
-    toolbar.addActiveSoundClass($sound14);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["f" /* sound14 */].play();
-  });
-  $sound15.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound15);
-    toolbar.addActiveSoundClass($sound15);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["g" /* sound15 */].play();
-  });
-  $sound16.click(function (){
-    toolbar.removeActiveSoundClass();
-    toolbar.setCurrentSound(toolbar.sounds.sound16);
-    toolbar.addActiveSoundClass($sound16);
-    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["h" /* sound16 */].play();
-  });
-
-  // handle adding songs to our stores grid and add image to html
-  $('ul li').click(function(e) {
-    const [col, row] = $(this).attr('id').split('-');
-    console.log('col and row: ', col, row);
-    if( toolbar.currentSound ) {
-      $(this).html(`<img src=${toolbar.currentSound.img}>`);
-      store.addSound(col, row, toolbar.currentSound.sound);
-    }
-  });
-
-  const $slider = $('#slider');
-  let marioTempo = 16;
-
-  $('#tempo-select').change(function(e) {
-    player.stopAndReset();
-    $slider.removeClass('playing');
-    const tempo = parseInt($(this).val());
-    marioTempo = 16 * (tempo / 1000);
-    player.setTempo( tempo );
-  });
-
-  $('#play').click(function(e) {
-    player.play(store);
-    if($slider.hasClass('playing')){
-      if($('.playing').css('animation-play-state')) {
-        console.log($('.playing'));
-        $('.playing').css('animation-play-state', 'running');
-      }
-    } else {
-      $slider.addClass('playing').css(
-        'animation-duration', `${marioTempo}s`
-      );
-    }
-  });
-
-  $('#stop').click(function () {
-    player.stopAndReset();
-    $slider.removeClass('playing');
-  });
-
-  $('#pause').click(function () {
-    player.pause();
-    $('.playing').css('animation-play-state','paused');
-  });
-
-});
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_howler__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_howler__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_howler__);
 
 
@@ -381,7 +187,7 @@ const sound16 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
 
 
 /***/ }),
-/* 3 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -3187,147 +2993,10 @@ const sound16 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   };
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sounds__ = __webpack_require__(2);
-
-
-class Toolbar {
-  constructor (){
-    this.currentSound = null;
-    this.sounds = {
-      sound1: {sound: null, selector: $('#sound1'), img: 'assets/images/blank.png'},
-      sound2: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["i" /* sound2 */], selector: $('#sound2'), img: 'assets/images/1_mario.png'},
-      sound3: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["j" /* sound3 */], selector: $('#sound3'), img: 'assets/images/2_mushroom.png'},
-      sound4: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["k" /* sound4 */], selector: $('#sound4'), img: 'assets/images/3_yoshi.png'},
-      sound5: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["l" /* sound5 */], selector: $('#sound5'), img: 'assets/images/4_star.png'},
-      sound6: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["m" /* sound6 */], selector: $('#sound6'), img: 'assets/images/5_flower.png'},
-      sound7: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["n" /* sound7 */], selector: $('#sound7'), img: 'assets/images/6_gameboy.png'},
-      sound8: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["o" /* sound8 */], selector: $('#sound8'), img: 'assets/images/7_dog.png'},
-      sound9: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["p" /* sound9 */], selector: $('#sound9'), img: 'assets/images/8_cat.png'},
-      sound10: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["b" /* sound10 */], selector: $('#sound10'), img: 'assets/images/9_pig.png'},
-      sound11: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["c" /* sound11 */], selector: $('#sound11'), img: 'assets/images/10_swan.png'},
-      sound12: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["d" /* sound12 */], selector: $('#sound12'), img: 'assets/images/11_face.png'},
-      sound13: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["e" /* sound13 */], selector: $('#sound13'), img: 'assets/images/12_plane.png'},
-      sound14: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["f" /* sound14 */], selector: $('#sound14'), img: 'assets/images/13_ship.png'},
-      sound15: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["g" /* sound15 */], selector: $('#sound15'), img: 'assets/images/14_car.png'},
-      sound16: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["h" /* sound16 */], selector: $('#sound16'), img: 'assets/images/15_heart.png'},
-    };
-  }
-
-  setCurrentSound(sound) {
-    // sound is a toolbar sound object
-    this.currentSound = sound;
-    console.log('current selected song: ', this.currentSound);
-  }
-
-  addActiveSoundClass($sound) {
-    $sound.addClass('active');
-  }
-
-  removeActiveSoundClass() {
-    $(".toolbar>div.active").removeClass('active');
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Toolbar);
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(7);
-
-
-class Player {
-  constructor() {
-    this.playing = false;
-    this.curPos = 1;
-    this.tempo = 1000;
-    this.playerLoop = null;
-    this.pausePos = null;
-  }
-  // a player is responsible for the loop of the music. It will essentially
-  // be a controller for a running loop and have multiple functions around it.
-  playCurrentPlaylist(soundList){
-    soundList.forEach( (song) => song.play() );
-  }
-
-  play(store) {
-    if (!this.playing) {
-      this.playing = true;
-      this.playerLoop = setInterval( () => {
-        if(this.curPos > 16) {
-          this.curPos = 1;
-        }
-        const soundList = store.fetchColumnSounds(this.curPos);
-        this.playCurrentPlaylist(soundList);
-        console.log(`playing column: ${this.curPos}`);
-        this.curPos += 1;
-      }, this.tempo );
-    }
-  }
-
-  pause() {
-    this.playing = false;
-    clearInterval(this.playerLoop);
-    this.pausePos = (( this.curPos / 16 ) * 100 - 6);
-    console.log('paused margin: ', this.pausePos);
-  }
-
-  stopAndReset() {
-    this.playing = false;
-    clearInterval(this.playerLoop);
-    this.curPos = 1;
-    this.pausePos = null;
-  }
-
-  setTempo(tempo) {
-    this.tempo = tempo;
-    console.log('tempo set to: ', this.tempo);
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Player);
-
-
-/***/ }),
-/* 7 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3470,12 +3139,10 @@ class Store {
   addSound(col, row, song) {
     // song should be a pojo with the bg img?
     this.grid[col][row] = song;
-    console.log('grid after add: ', this.grid);
   }
-
+  
   removeSound(col, row) {
     this.grid[col][row] = null;
-    console.log('grid after remove: ', this.grid);
   }
 
   fetchColumnSounds(col) {
@@ -3486,6 +3153,337 @@ class Store {
 
 }
 /* harmony default export */ __webpack_exports__["a"] = (Store);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(4);
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sounds_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toolbar__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_howler__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_howler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_howler__);
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const toolbar = new __WEBPACK_IMPORTED_MODULE_1__toolbar__["a" /* default */]();
+  const player = new __WEBPACK_IMPORTED_MODULE_2__player__["a" /* default */]();
+  const store = new __WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */]();
+
+  const $sound1 = $('#sound1');
+  const $sound2 = $('#sound2');
+  const $sound3 = $('#sound3');
+  const $sound4 = $('#sound4');
+  const $sound5 = $('#sound5');
+  const $sound6 = $('#sound6');
+  const $sound7 = $('#sound7');
+  const $sound8 = $('#sound8');
+  const $sound9 = $('#sound9');
+  const $sound10 = $('#sound10');
+  const $sound11 = $('#sound11');
+  const $sound12 = $('#sound12');
+  const $sound13 = $('#sound13');
+  const $sound14 = $('#sound14');
+  const $sound15 = $('#sound15');
+  const $sound16 = $('#sound16');
+
+  $sound1.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound1);
+    toolbar.addActiveSoundClass($sound1);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["a" /* sound1 */].play();
+  });
+  $sound2.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound2);
+    toolbar.addActiveSoundClass($sound2);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["i" /* sound2 */].play();
+  });
+  $sound3.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound3);
+    toolbar.addActiveSoundClass($sound3);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["j" /* sound3 */].play();
+  });
+  $sound4.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound4);
+    toolbar.addActiveSoundClass($sound4);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["k" /* sound4 */].play();
+  });
+  $sound5.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound5);
+    toolbar.addActiveSoundClass($sound5);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["l" /* sound5 */].play();
+  });
+  $sound6.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound6);
+    toolbar.addActiveSoundClass($sound6);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["m" /* sound6 */].play();
+  });
+  $sound7.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound7);
+    toolbar.addActiveSoundClass($sound7);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["n" /* sound7 */].play();
+  });
+  $sound8.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound8);
+    toolbar.addActiveSoundClass($sound8);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["o" /* sound8 */].play();
+  });
+  $sound9.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound9);
+    toolbar.addActiveSoundClass($sound9);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["p" /* sound9 */].play();
+  });
+  $sound10.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound10);
+    toolbar.addActiveSoundClass($sound10);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["b" /* sound10 */].play();
+  });
+  $sound11.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound11);
+    toolbar.addActiveSoundClass($sound11);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["c" /* sound11 */].play();
+  });
+  $sound12.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound12);
+    toolbar.addActiveSoundClass($sound12);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["d" /* sound12 */].play();
+  });
+  $sound13.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound13);
+    toolbar.addActiveSoundClass($sound13);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["e" /* sound13 */].play();
+  });
+  $sound14.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound14);
+    toolbar.addActiveSoundClass($sound14);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["f" /* sound14 */].play();
+  });
+  $sound15.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound15);
+    toolbar.addActiveSoundClass($sound15);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["g" /* sound15 */].play();
+  });
+  $sound16.click(function (){
+    toolbar.removeActiveSoundClass();
+    toolbar.setCurrentSound(toolbar.sounds.sound16);
+    toolbar.addActiveSoundClass($sound16);
+    __WEBPACK_IMPORTED_MODULE_0__sounds_js__["h" /* sound16 */].play();
+  });
+
+  // handle adding songs to our stores grid and add image to html
+  $('ul li').click(function(e) {
+    const [col, row] = $(this).attr('id').split('-');
+    if( toolbar.currentSound ) {
+      $(this).html(`<img src=${toolbar.currentSound.img}>`);
+      store.addSound(col, row, toolbar.currentSound.sound);
+    }
+  });
+
+  const $slider = $('#slider');
+  let marioTempo = 16;
+
+  $('#tempo-select').change(function() {
+    player.stopAndReset();
+    $slider.removeClass('playing');
+    const tempo = parseInt($(this).val());
+    marioTempo = 16 * (tempo / 1000);
+    player.setTempo( tempo );
+  });
+
+  $('#play').click(function(e) {
+    player.play(store);
+    if($slider.hasClass('playing')){
+      if($('.playing').css('animation-play-state')) {
+        $('.playing').css('animation-play-state', 'running');
+      }
+    } else {
+      $slider.addClass('playing').css(
+        'animation-duration', `${marioTempo}s`
+      );
+    }
+  });
+
+  $('#stop').click(function () {
+    player.stopAndReset();
+    $slider.removeClass('playing');
+  });
+
+  $('#pause').click(function () {
+    player.pause();
+    $('.playing').css('animation-play-state','paused');
+  });
+
+  $('#instructions-hamburger').hover(function () {
+    $('#instructions-wrapper').addClass('show');
+  }, function() {
+    $('#instructions-wrapper').removeClass('show');
+  }
+  );
+
+});
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sounds__ = __webpack_require__(0);
+
+
+class Toolbar {
+  constructor (){
+    this.currentSound = null;
+    this.sounds = {
+      sound1: {sound: null, selector: $('#sound1'), img: 'assets/images/blank.png'},
+      sound2: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["i" /* sound2 */], selector: $('#sound2'), img: 'assets/images/1_mario.png'},
+      sound3: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["j" /* sound3 */], selector: $('#sound3'), img: 'assets/images/2_mushroom.png'},
+      sound4: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["k" /* sound4 */], selector: $('#sound4'), img: 'assets/images/3_yoshi.png'},
+      sound5: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["l" /* sound5 */], selector: $('#sound5'), img: 'assets/images/4_star.png'},
+      sound6: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["m" /* sound6 */], selector: $('#sound6'), img: 'assets/images/5_flower.png'},
+      sound7: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["n" /* sound7 */], selector: $('#sound7'), img: 'assets/images/6_gameboy.png'},
+      sound8: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["o" /* sound8 */], selector: $('#sound8'), img: 'assets/images/7_dog.png'},
+      sound9: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["p" /* sound9 */], selector: $('#sound9'), img: 'assets/images/8_cat.png'},
+      sound10: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["b" /* sound10 */], selector: $('#sound10'), img: 'assets/images/9_pig.png'},
+      sound11: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["c" /* sound11 */], selector: $('#sound11'), img: 'assets/images/10_swan.png'},
+      sound12: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["d" /* sound12 */], selector: $('#sound12'), img: 'assets/images/11_face.png'},
+      sound13: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["e" /* sound13 */], selector: $('#sound13'), img: 'assets/images/12_plane.png'},
+      sound14: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["f" /* sound14 */], selector: $('#sound14'), img: 'assets/images/13_ship.png'},
+      sound15: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["g" /* sound15 */], selector: $('#sound15'), img: 'assets/images/14_car.png'},
+      sound16: {sound: __WEBPACK_IMPORTED_MODULE_0__sounds__["h" /* sound16 */], selector: $('#sound16'), img: 'assets/images/15_heart.png'},
+    };
+  }
+
+  setCurrentSound(sound) {
+    // sound is a toolbar sound object
+    this.currentSound = sound;
+  }
+
+  addActiveSoundClass($sound) {
+    $sound.addClass('active');
+  }
+
+  removeActiveSoundClass() {
+    $(".toolbar>div.active").removeClass('active');
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Toolbar);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(2);
+
+
+class Player {
+  constructor() {
+    this.playing = false;
+    this.curPos = 1;
+    this.tempo = 1000;
+    this.playerLoop = null;
+    this.pausePos = null;
+  }
+  // a player is responsible for the loop of the music. It will essentially
+  // be a controller for a running loop and have multiple functions around it.
+  playCurrentPlaylist(soundList){
+    soundList.forEach( (song) => song.play() );
+  }
+
+  play(store) {
+    if (!this.playing) {
+      this.playing = true;
+      this.playerLoop = setInterval( () => {
+        if(this.curPos > 16) {
+          this.curPos = 1;
+        }
+        const soundList = store.fetchColumnSounds(this.curPos);
+        this.playCurrentPlaylist(soundList);
+        this.curPos += 1;
+      }, this.tempo );
+    }
+  }
+
+  pause() {
+    this.playing = false;
+    clearInterval(this.playerLoop);
+    this.pausePos = (( this.curPos / 16 ) * 100 - 6);
+  }
+
+  stopAndReset() {
+    this.playing = false;
+    clearInterval(this.playerLoop);
+    this.curPos = 1;
+    this.pausePos = null;
+  }
+
+  setTempo(tempo) {
+    this.tempo = tempo;
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Player);
 
 
 /***/ })
