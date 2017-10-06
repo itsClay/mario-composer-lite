@@ -6,9 +6,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="bundle.js"></script>
     <link rel="stylesheet" href="./styles/styles.css">
-</head>
-  <body>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107695013-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-107695013-1');
+    </script>
+
+  </head>
+  <body>
     <div class="toolbar">
       <div id="sound1"class="icon">
         <img src="assets/images/eraser.png" alt="">
@@ -248,7 +257,13 @@
         <option value="2000">.5x</option>
       </select>
     </div>
-    <div class="instructions-wrapper">
+    <button
+      id="instructions-hamburger"
+      class="instructions-hamburger btn">What do I do?
+    </button>
+    <div
+      id="instructions-wrapper"
+      class="instructions-wrapper">
       <div class="step-1">
         <img src="assets/images/step_1.png" alt="">
       </div>
