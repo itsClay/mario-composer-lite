@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     __WEBPACK_IMPORTED_MODULE_0__sounds_js__["h" /* sound16 */].play();
   });
 
+  // handle adding songs to our stores grid and add image to html
   $('ul li').click(function(e) {
     const [col, row] = $(this).attr('id').split('-');
     console.log('col and row: ', col, row);
@@ -224,10 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
   $('#tempo-select').change(function(e) {
     player.stopAndReset();
     $slider.removeClass('playing');
-    let tempo = parseInt($(this).val());
-    console.log('tempo: ',tempo);
+    const tempo = parseInt($(this).val());
     marioTempo = 16 * (tempo / 1000);
-    console.log('mario tempo: ', marioTempo);
     player.setTempo( tempo );
   });
 
@@ -239,7 +238,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.playing').css('animation-play-state', 'running');
       }
     } else {
-      $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
+      $slider.addClass('playing').css(
+        'animation-duration', `${marioTempo}s`
+      );
     }
   });
 
@@ -269,7 +270,6 @@ const sound1 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote1.wav'],
   autoplay: false,
   loop: false,
-  onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["a"] = sound1;
 
@@ -277,7 +277,6 @@ const sound2 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote2.wav'],
   autoplay: false,
   loop: false,
-  onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["i"] = sound2;
 
@@ -285,7 +284,6 @@ const sound3 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote3.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["j"] = sound3;
 
@@ -293,7 +291,6 @@ const sound4 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote4.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["k"] = sound4;
 
@@ -301,7 +298,6 @@ const sound5 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote5.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["l"] = sound5;
 
@@ -309,7 +305,6 @@ const sound6 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote6.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["m"] = sound6;
 
@@ -317,7 +312,6 @@ const sound7 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote7.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["n"] = sound7;
 
@@ -325,7 +319,6 @@ const sound8 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote8.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["o"] = sound8;
 
@@ -333,7 +326,6 @@ const sound9 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote9.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["p"] = sound9;
 
@@ -341,7 +333,6 @@ const sound10 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote10.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["b"] = sound10;
 
@@ -349,7 +340,6 @@ const sound11 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote11.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["c"] = sound11;
 
@@ -357,7 +347,6 @@ const sound12 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote12.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["d"] = sound12;
 
@@ -365,7 +354,6 @@ const sound13 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote13.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["e"] = sound13;
 
@@ -373,7 +361,6 @@ const sound14 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote14.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["f"] = sound14;
 
@@ -381,7 +368,6 @@ const sound15 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote15.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["g"] = sound15;
 
@@ -389,7 +375,6 @@ const sound16 = new __WEBPACK_IMPORTED_MODULE_0_howler__["Howl"]({
   src: ['assets/sounds/musicnote16.wav'],
   autoplay: false,
   loop: false,
-  // onend: () => console.log('sound1')
 });
 /* harmony export (immutable) */ __webpack_exports__["h"] = sound16;
 
@@ -3304,7 +3289,6 @@ class Player {
   }
 
   play(store) {
-    // activate our play loop
     if (!this.playing) {
       this.playing = true;
       this.playerLoop = setInterval( () => {
