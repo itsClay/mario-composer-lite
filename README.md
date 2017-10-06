@@ -5,6 +5,8 @@
 
 A fan project from a favorite game that I grew up playing as a child. Users can select a specific mario-related sounds and place them on a sheet of music to compose a song.
 
+<img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1507312212/mario_lite_demo_irdvfb.gif">
+
 ## Technologies used
 1. Vanilla Javascript and jQuery for structure and handling specific events.
 2. Howler.js to handle concurrent sounds and caching.
