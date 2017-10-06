@@ -126,13 +126,13 @@ select {
   margin-right: 10px;
 }
 .instructions-wrapper {
-  position:absolute;
+  position:fixed;
   right: -1px;
   top: -1px;
   z-index: -1;
   /*background-color: purple;*/
 }
-@media screen and (max-width: 1028px) {
+@media screen and (max-width: 1200px) {
   .instructions-wrapper > div {
     display: none;
     background-color: green;
