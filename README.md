@@ -10,6 +10,7 @@ A fan project from a favorite game that I grew up playing as a child. Users can 
 ## Technologies used
 1. Vanilla Javascript and jQuery for structure and handling specific events.
 2. Howler.js to handle concurrent sounds and caching.
+[Howler Github](https://github.com/goldfire/howler.js/)
 3. Webpack to bundle and serve scripts.
 
 ## Initial Wireframes
