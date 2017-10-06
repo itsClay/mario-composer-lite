@@ -1,12 +1,13 @@
-.position-tracker {
-  /*this will be responsible for drawing a vertical semi transparent
-  line to show positioning of sounds*/
-}
 body {
-  background-image: url("http://res.cloudinary.com/do2rg2v7p/image/upload/v1507243641/mario_bg_d3awzp.jpg");
-  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  background: url("http://res.cloudinary.com/do2rg2v7p/image/upload/v1507243641/mario_bg_d3awzp.jpg") no-repeat center top;
+  height: 100%;
+  width: 100%;
   background-size: cover;
+  background-color: #ca4f13;
 }
+
 .active {
   border: 2px solid red;
 }
@@ -21,22 +22,22 @@ body {
   height: 40px;
 }
 .toolbar {
-  margin-top: 45px;
+  margin-top: 50px;
+  margin-left: 35px;
   display: flex;
   width: 100%;
   justify-content: flex-start;
   margin-bottom: 10px;
-  margin-left: 30px
 }
 .grid-wrapper {
   width: 700px;
   display: flex;
   flex-direction: column;
-  margin-left: 30px
+  margin-left: 35px
 }
 .player-wrapper {
   display: flex;
-  margin-left: 30px;
+  margin-left: 35px;
 }
 .progress-tracker {
   display: flex;
@@ -88,56 +89,9 @@ body {
 @keyframes sliding {
   0% {
     margin-left: 0%;
-    /*width: 300%;*/
   }
-  /*6.25%{
-    margin-left: 0.25%;
-  }
-  12.5% {
-    margin-left: 6.5%;
-  }
-  18.75% {
-    margin-left: 12.75%;
-  }
-  25% {
-    margin-left: 19%;
-  }
-  31.25%{
-    margin-left: 25.25%;
-  }
-  37.5% {
-    margin-left: 31.5%;
-  }
-  43.75% {
-    margin-left: 37.75%;
-  }
-  50% {
-    margin-left: 44%;
-  }
-  56.25 {
-    margin-left: 50.25%;
-  }
-  62.5% {
-    margin-left: 56.5%;
-  }
-  68.75% {
-    margin-left: 62.75%;
-  }
-  75% {
-    margin-left: 69%;
-  }
-  81.25% {
-    margin-left: 75.25%;
-  }
-  87.5% {
-    margin-left: 81.5%;
-  }
-  93.75% {
-    margin-left: 87.75%;
-  }*/
   100% {
     margin-left: 100%;
-    /*width: 100%;*/
   }
 }
 .player-wrapper {
@@ -175,4 +129,18 @@ select {
   position:absolute;
   right: -1px;
   top: -1px;
+  z-index: -1;
+  /*background-color: purple;*/
+}
+@media screen and (max-width: 1028px) {
+  .instructions-wrapper > div {
+    display: none;
+    background-color: green;
+  }
+  .btn {
+    background-color: #6096ff;
+  }
+  select {
+    background-color: #6096ff;
+  }
 }

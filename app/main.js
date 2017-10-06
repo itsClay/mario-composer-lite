@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     Sounds.sound16.play();
   });
 
+  // handle adding songs to our stores grid and add image to html
   $('ul li').click(function(e) {
     const [col, row] = $(this).attr('id').split('-');
     console.log('col and row: ', col, row);
@@ -140,10 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
   $('#tempo-select').change(function(e) {
     player.stopAndReset();
     $slider.removeClass('playing');
-    let tempo = parseInt($(this).val());
-    console.log('tempo: ',tempo);
+    const tempo = parseInt($(this).val());
     marioTempo = 16 * (tempo / 1000);
-    console.log('mario tempo: ', marioTempo);
     player.setTempo( tempo );
   });
 
@@ -155,7 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.playing').css('animation-play-state', 'running');
       }
     } else {
-      $slider.addClass('playing').css('animation-duration', `${marioTempo}s`);
+      $slider.addClass('playing').css(
+        'animation-duration', `${marioTempo}s`
+      );
     }
   });
 

@@ -15,7 +15,6 @@ class Player {
   }
 
   play(store) {
-    // activate our play loop
     if (!this.playing) {
       this.playing = true;
       this.playerLoop = setInterval( () => {
