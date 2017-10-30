@@ -134,11 +134,22 @@ class Store {
     this.removeSound = this.removeSound.bind(this);
   }
 
+
+
   addSound(col, row, song) {
-    // song should be a pojo with the bg img?
+    song._webAudio = true;
+
+    const audioCtx = new (window.audioCtx || window.webkitAudioContext());
+    const oscillator = audioCtx.createOscillator();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = 2500;
+    oscillator.start();
+    // song._rate = 4;
+
+    console.log(song);
     this.grid[col][row] = song;
   }
-  
+
   removeSound(col, row) {
     this.grid[col][row] = null;
   }
@@ -146,7 +157,7 @@ class Store {
   fetchColumnSounds(col) {
     return Object.keys(this.grid[col]).map(
       (row) => this.grid[col][row]
-    ).filter( (sound) => Boolean(sound) );
+    ).filter((sound) => Boolean(sound));
   }
 
 }
