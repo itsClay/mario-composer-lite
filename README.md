@@ -1,11 +1,11 @@
-<img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1507311319/Screen_Shot_2017-10-06_at_9.56.25_AM_x4zhxy.png">
+<img src="https://res.cloudinary.com/do2rg2v7p/image/upload/v1507311319/Screen_Shot_2017-10-06_at_9.56.25_AM_x4zhxy.png">
 
 <a href="https://itsclay.github.io/mario-composer-lite/">https://itsclay.github.io/mario-composer-lite/</a>
 # Mario Composer Lite
 
 A fan project from a favorite game that I grew up playing as a child. Users can select a specific mario-related sounds and place them on a sheet of music to compose a song.
 
-<img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1507312212/mario_lite_demo_irdvfb.gif">
+<img src="https://res.cloudinary.com/do2rg2v7p/image/upload/v1507312212/mario_lite_demo_irdvfb.gif">
 
 ## Technologies used
 1. Vanilla Javascript and jQuery for structure and handling specific events.
