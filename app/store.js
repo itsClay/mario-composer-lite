@@ -137,16 +137,17 @@ class Store {
 
 
   addSound(col, row, song) {
-    song._webAudio = true;
-
-    const audioCtx = new (window.audioCtx || window.webkitAudioContext());
-    const oscillator = audioCtx.createOscillator();
-    oscillator.type = 'sine';
-    oscillator.frequency.value = 2500;
-    oscillator.start();
+    // song._webAudio = true;
+    //
+    // const audioCtx = new (window.audioCtx || window.webkitAudioContext());
+    // const source = audioCtx.createMediaStreamSource(song)
+    // const oscillator = audioCtx.createOscillator();
+    // oscillator.type = 'sine';
+    // oscillator.frequency.value = 2500;
+    // oscillator.start();
     // song._rate = 4;
 
-    console.log(song);
+    // console.log(song);
     this.grid[col][row] = song;
   }
 

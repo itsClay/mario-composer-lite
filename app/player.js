@@ -1,5 +1,7 @@
 import Store from './store.js';
 
+// a player is responsible for the loop of the music. It will essentially
+// be a controller for a running loop and have multiple functions around it.
 class Player {
   constructor() {
     this.playing = false;
@@ -8,12 +10,11 @@ class Player {
     this.playerLoop = null;
     this.pausePos = null;
   }
-  // a player is responsible for the loop of the music. It will essentially
-  // be a controller for a running loop and have multiple functions around it.
   playCurrentPlaylist(soundList){
     soundList.forEach( (song) => song.play() );
   }
 
+  // Setting the loop to a max and playing each sound
   play(store) {
     if (!this.playing) {
       this.playing = true;

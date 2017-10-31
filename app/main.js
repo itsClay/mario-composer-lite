@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $('#play').click(function(e) {
     player.play(store);
+
+    // Mario animation timing
     if($slider.hasClass('playing')){
       if($('.playing').css('animation-play-state')) {
         $('.playing').css('animation-play-state', 'running');
@@ -167,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.playing').css('animation-play-state','paused');
   });
 
+  // Responsive right-side instructions
   $('#instructions-hamburger').hover(function () {
     $('#instructions-wrapper').addClass('show');
     }, function() {
