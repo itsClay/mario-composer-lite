@@ -3139,16 +3139,17 @@ class Store {
 
 
   addSound(col, row, song) {
-    song._webAudio = true;
-
-    const audioCtx = new (window.audioCtx || window.webkitAudioContext());
-    const oscillator = audioCtx.createOscillator();
-    oscillator.type = 'sine';
-    oscillator.frequency.value = 2500;
-    oscillator.start();
+    // song._webAudio = true;
+    //
+    // const audioCtx = new (window.audioCtx || window.webkitAudioContext());
+    // const source = audioCtx.createMediaStreamSource(song)
+    // const oscillator = audioCtx.createOscillator();
+    // oscillator.type = 'sine';
+    // oscillator.frequency.value = 2500;
+    // oscillator.start();
     // song._rate = 4;
 
-    console.log(song);
+    // console.log(song);
     this.grid[col][row] = song;
   }
 
@@ -3333,6 +3334,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $('#play').click(function(e) {
     player.play(store);
+
+    // Mario animation timing
     if($slider.hasClass('playing')){
       if($('.playing').css('animation-play-state')) {
         $('.playing').css('animation-play-state', 'running');
@@ -3354,6 +3357,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.playing').css('animation-play-state','paused');
   });
 
+  // Responsive right-side instructions
   $('#instructions-hamburger').hover(function () {
     $('#instructions-wrapper').addClass('show');
     }, function() {
@@ -3448,6 +3452,8 @@ class Toolbar {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(2);
 
 
+// a player is responsible for the loop of the music. It will essentially
+// be a controller for a running loop and have multiple functions around it.
 class Player {
   constructor() {
     this.playing = false;
@@ -3456,12 +3462,11 @@ class Player {
     this.playerLoop = null;
     this.pausePos = null;
   }
-  // a player is responsible for the loop of the music. It will essentially
-  // be a controller for a running loop and have multiple functions around it.
   playCurrentPlaylist(soundList){
     soundList.forEach( (song) => song.play() );
   }
 
+  // Setting the loop to a max and playing each sound
   play(store) {
     if (!this.playing) {
       this.playing = true;
